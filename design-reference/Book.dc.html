@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Yashasvi Sorapalli — A portfolio (book)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;family=Noto+Sans+Devanagari:wght@500&amp;family=Noto+Sans+Telugu:wght@500&amp;family=Noto+Sans+Kannada:wght@500&amp;display=swap">
+<style>
+body{margin:0}
+.book{--back:#E9E4D9;--page:#FAF7F0;--ink:#24221F;--muted:#625C55;--rule:#D9D1C3;--accent:#2F5D8A;--plate:#FFFFFF;--shadow:0 18px 48px rgba(61,48,31,.12),0 1px 3px rgba(61,48,31,.08)}
+.book[data-theme="dark"]{--back:#0E0F12;--page:#1A1B1F;--ink:#ECEAE4;--muted:#AEB0B6;--rule:#383A41;--accent:#8FB4DB;--plate:#F4F1EA;--shadow:0 18px 48px rgba(0,0,0,.55),0 1px 3px rgba(0,0,0,.4);background-image:radial-gradient(1.2px 1.2px at 30px 40px,rgba(236,234,228,.55) 50%,transparent 52%),radial-gradient(1px 1px at 140px 110px,rgba(236,234,228,.4) 50%,transparent 52%),radial-gradient(1.4px 1.4px at 210px 20px,rgba(236,234,228,.5) 50%,transparent 52%),radial-gradient(1px 1px at 80px 190px,rgba(236,234,228,.35) 50%,transparent 52%);background-size:260px 230px}
+.book a{color:var(--accent)}.book a:hover{color:var(--ink)}
+.book *{transition:background-color .25s ease,color .25s ease,border-color .25s ease}
+.book .blurb{transition:opacity .45s ease,transform .45s ease}
+@media (prefers-reduced-motion: reduce){.book *,.book .blurb{transition:none}}
+.book button:focus-visible,.book a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.nav-links{display:flex}.nav-menu-btn{display:none}.nav-sheet{display:none}
+.route-rail{display:block}.route-bar{display:none}
+.praise-side{display:block}.praise-inline{display:none}.praise-ticker{display:none}
+@media (max-width: 900px){.praise-side{display:none}.praise-ticker{display:flex}}
+@media (max-width: 900px){.route-rail{display:none}.route-bar{display:flex}}
+@media (max-width: 760px){.nav-links{display:none}.nav-menu-btn{display:inline-flex}.nav-sheet{display:flex}}
+</style>
+</helmet>
+<div class="book" data-theme="{{theme}}" style="background-color: var(--back); color: var(--ink); font-family: 'Geist', system-ui, sans-serif; min-height: 100vh; -webkit-font-smoothing: antialiased">
+
+  <!-- NAV -->
+  <header style="max-width: 1100px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px 24px">
+    <a href="#top" style="font-weight: 600; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; color: var(--ink); padding: 10px 0">Yashasvi Sorapalli</a>
+    <div style="display: flex; align-items: center; gap: 4px 22px">
+      <nav class="nav-links" aria-label="Primary" style="align-items: center; gap: 4px 22px; font-size: 15px">
+        <a href="#contents" style="color: var(--ink); text-decoration: none; padding: 10px 0">Contents</a>
+        <a href="Book-Projects.dc.html" style="color: var(--ink); text-decoration: none; padding: 10px 0">Projects</a>
+        <a href="#correspondence" style="color: var(--ink); text-decoration: none; padding: 10px 0">Contact</a>
+        <a href="Book-Connect.dc.html" style="color: var(--ink); text-decoration: none; padding: 10px 0">Connect</a>
+        <a href="https://ysorapalli.com/data/YashasviSorapalli-Resume.pdf" style="color: var(--ink); text-decoration: none; padding: 8px 16px; border: 1px solid var(--ink); border-radius: 999px; font-weight: 500">Resume</a>
+      </nav>
+      <div role="group" aria-label="Color theme" style="display: inline-flex; gap: 2px; padding: 3px; border: 1px solid var(--rule); border-radius: 999px">
+        <button type="button" aria-label="Light theme" aria-pressed="{{lightPressed}}" onClick="{{setLight}}" style="width: 44px; height: 36px; border: 0; border-radius: 999px; background: {{lightBg}}; color: {{lightFg}}; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; padding: 0">
+          <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        </button>
+        <button type="button" aria-label="Dark theme" aria-pressed="{{darkPressed}}" onClick="{{setDark}}" style="width: 44px; height: 36px; border: 0; border-radius: 999px; background: {{darkBg}}; color: {{darkFg}}; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; padding: 0">
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+      </div>
+      <button type="button" class="nav-menu-btn" aria-label="Menu" aria-expanded="{{menuExpanded}}" onClick="{{toggleMenu}}" style="width: 44px; height: 44px; border: 1px solid var(--rule); border-radius: 999px; background: transparent; color: var(--ink); cursor: pointer; align-items: center; justify-content: center; padding: 0">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"></path></svg>
+      </button>
+    </div>
+  </header>
+  <sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+    <nav class="nav-sheet" aria-label="Menu" style="flex-direction: column; margin: 0 20px 12px; padding: 8px 18px; border: 1px solid var(--rule); background: var(--page); font-size: 17px">
+      <a href="#contents" onClick="{{closeMenu}}" style="color: var(--ink); text-decoration: none; padding: 12px 0; border-bottom: 1px solid var(--rule)">Contents</a>
+      <a href="Book-Projects.dc.html" style="color: var(--ink); text-decoration: none; padding: 12px 0; border-bottom: 1px solid var(--rule)">Projects</a>
+      <a href="#correspondence" onClick="{{closeMenu}}" style="color: var(--ink); text-decoration: none; padding: 12px 0; border-bottom: 1px solid var(--rule)">Contact</a>
+      <a href="Book-Connect.dc.html" style="color: var(--ink); text-decoration: none; padding: 12px 0; border-bottom: 1px solid var(--rule)">Connect &amp; LinkedIn</a>
+      <a href="https://ysorapalli.com/data/YashasviSorapalli-Resume.pdf" style="color: var(--ink); text-decoration: none; padding: 12px 0">Resume</a>
+    </nav>
+  </sc-if>
+
+  <!-- Mobile reading progress (sticky) -->
+  <div class="route-bar" role="navigation" aria-label="Reading progress" style="position: sticky; top: 0; z-index: 5; background: var(--back); border-bottom: 1px solid var(--rule); padding: 10px 20px; flex-wrap: wrap; align-items: center; gap: 8px 14px">
+    <span style="flex: 0 0 auto; min-width: 86px; font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent)">{{currentShort}}</span>
+    <div aria-hidden="true" style="position: relative; flex: 1 1 auto; height: 12px">
+      <span style="position: absolute; left: 0; right: 0; top: 5px; height: 2px; background: var(--rule)"></span>
+      <span style="position: absolute; left: 0; top: 5px; height: 2px; width: {{pct}}%; background: var(--accent)"></span>
+      <sc-for list="{{route}}" as="r" hint-placeholder-count="7">
+        <span style="position: absolute; left: {{r.pct}}%; top: 1px; width: 10px; height: 10px; margin-left: -5px; border-radius: 999px; box-sizing: border-box; border: 2px solid {{r.border}}; background: {{r.fill}}"></span>
+      </sc-for>
+    </div>
+    <div class="praise-ticker" aria-label="Praise for Yashasvi Sorapalli" style="flex: 1 1 100%; align-items: baseline; gap: 8px; min-width: 0; font-size: 13px; line-height: 1.4">
+      <span style="flex: 0 0 auto; font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted)">Praise</span>
+      <span style="flex: 0 0 auto; color: var(--accent); font-size: 10px; letter-spacing: 0.08em">★★★★★</span>
+      <span style="min-width: 0; color: var(--ink)">“{{cur.text}}” <span style="color: var(--muted)">· {{cur.who}}</span></span>
+    </div>
+  </div>
+
+  <!-- PAGE -->
+  <main id="top" style="max-width: 1100px; margin: 8px auto 0; background: var(--page); box-shadow: var(--shadow); position: relative; padding: 0 clamp(20px, 13vw, 190px) 0 clamp(20px, 10.5vw, 150px); box-sizing: border-box">
+    <svg aria-hidden="true" width="30" height="132" viewBox="0 0 30 132" style="position: absolute; top: -6px; right: clamp(20px, 9vw, 110px)"><path d="M0 0H30V132L15 118L0 132V0Z" style="fill: var(--accent)"></path></svg>
+    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" style="position: absolute; left: 14px; top: 14px"><path d="M9 0V18M0 9H18" style="stroke: var(--rule)"></path><circle cx="9" cy="9" r="4" fill="none" style="stroke: var(--rule)"></circle></svg>
+    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" style="position: absolute; left: 14px; bottom: 14px"><path d="M9 0V18M0 9H18" style="stroke: var(--rule)"></path><circle cx="9" cy="9" r="4" fill="none" style="stroke: var(--rule)"></circle></svg>
+    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" style="position: absolute; right: 14px; bottom: 14px"><path d="M9 0V18M0 9H18" style="stroke: var(--rule)"></path><circle cx="9" cy="9" r="4" fill="none" style="stroke: var(--rule)"></circle></svg>
+
+    <!-- Desktop reading progress: sticky route in the left margin -->
+    <div class="route-rail" style="position: absolute; left: clamp(16px, 2.6vw, 40px); top: 1180px; bottom: 240px; width: 104px">
+      <nav aria-label="Reading progress" style="position: sticky; top: 72px">
+        <span style="display: block; margin: 0 0 10px 4px; font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted)">Route</span>
+        <div style="position: relative">
+          <span aria-hidden="true" style="position: absolute; left: 21px; top: 20px; width: 2px; height: 240px; background: var(--rule)"></span>
+          <span aria-hidden="true" style="position: absolute; left: 21px; top: 20px; width: 2px; height: {{fillPx}}px; background: var(--accent); transition: height .2s ease"></span>
+          <ol style="list-style: none; margin: 0; padding: 0; position: relative">
+            <sc-for list="{{route}}" as="r" hint-placeholder-count="7">
+              <li style="height: 40px; display: flex; align-items: center; gap: 4px">
+                <a href="{{r.href}}" aria-label="{{r.title}}" aria-current="{{r.current}}" style="flex: 0 0 44px; width: 44px; height: 40px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none">
+                  <span style="width: 12px; height: 12px; border-radius: 999px; box-sizing: border-box; border: 2px solid {{r.border}}; background: {{r.fill}}; box-shadow: {{r.glow}}"></span>
+                </a>
+                <sc-if value="{{r.isCur}}" hint-placeholder-val="{{ false }}">
+                  <span style="font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.08em; line-height: 1.3; text-transform: uppercase; color: var(--accent)">{{r.short}}</span>
+                </sc-if>
+              </li>
+            </sc-for>
+          </ol>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Desktop praise: sticky column in the right margin, mirroring the route on the left -->
+    <div class="praise-side" style="position: absolute; right: clamp(16px, 2.6vw, 40px); top: 1180px; bottom: 240px; width: clamp(110px, 10vw, 150px)">
+      <aside aria-label="Praise for Yashasvi Sorapalli" style="position: sticky; top: 72px">
+        <span style="display: block; margin: 0 0 4px; font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted)">Praise</span>
+        <span style="display: block; margin: 0 0 12px; font-size: 13px; font-weight: 500; line-height: 1.3; color: var(--ink)">for Yashasvi Sorapalli</span>
+        <span style="display: block; margin-bottom: 16px; font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: var(--accent)">{{praisePos}} / {{praiseTotal}}</span>
+        <div style="position: relative; min-height: 260px">
+          <sc-for list="{{praise}}" as="q" hint-placeholder-count="7">
+            <figure class="blurb" aria-hidden="{{q.hidden}}" style="position: absolute; left: 0; top: 0; width: 100%; margin: 0; display: flex; flex-direction: column; gap: 10px; opacity: {{q.op}}; transform: translateY({{q.ty}}px)">
+              <span aria-label="Five stars" style="color: var(--accent); letter-spacing: 0.16em; font-size: 13px">★★★★★</span>
+              <blockquote style="margin: 0; font-size: 15px; font-weight: 500; line-height: 1.45; letter-spacing: -0.01em">“{{q.text}}”</blockquote>
+              <figcaption style="font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.06em; line-height: 1.6; text-transform: uppercase; color: var(--muted)">{{q.who}}</figcaption>
+            </figure>
+          </sc-for>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Title page -->
+    <section aria-label="Title page" style="padding: clamp(88px, 11vw, 140px) 0 clamp(56px, 7vw, 88px); max-width: 886px; display: flex; flex-wrap: wrap; align-items: center; gap: 40px 48px">
+      <div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+        <p style="margin: 0; font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted)">A portfolio</p>
+        <h1 style="margin: 0; font-weight: 600; font-size: clamp(46px, 7vw, 88px); line-height: 0.98; letter-spacing: -0.04em">Yashasvi Sorapalli</h1>
+        <p style="margin: 0; max-width: 480px; font-size: clamp(19px, 1.8vw, 23px); line-height: 1.45; color: var(--muted)">Robots, research, and figuring out what I want to build.</p>
+        <p style="margin: 6px 0 0; font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.1em; line-height: 1.6; text-transform: uppercase; color: var(--muted)">Carnegie Mellon University · Pittsburgh · 2026</p>
+      </div>
+      <figure style="flex: 1 1 280px; max-width: 360px; margin: 0; display: flex; flex-direction: column; gap: 10px">
+        <svg role="img" aria-label="Interactive robot arm. Click and drag inside the sketch pad and the arm draws along your path." viewBox="0 0 360 310" onPointerDown="{{padDown}}" onPointerMove="{{padMove}}" onPointerUp="{{padUp}}" onPointerCancel="{{padUp}}" style="width: 100%; height: auto; overflow: visible; touch-action: none; cursor: crosshair; user-select: none">
+          <rect x="126" y="162" width="192" height="130" rx="4" fill="none" stroke-width="1.2" stroke-dasharray="4 5" style="stroke: var(--rule)"></rect>
+          <text x="314" y="157" text-anchor="end" style="fill: var(--muted); font-family: 'Geist Mono', monospace; font-size: 9px; letter-spacing: 0.1em">SKETCH PAD</text>
+          <path d="{{trail}}" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--muted)"></path>
+          <rect x="40" y="262" width="80" height="16" rx="3" style="fill: var(--ink)"></rect>
+          <path d="M60 262 L68 244 H92 L100 262 Z" style="fill: var(--ink)"></path>
+          <path d="{{arm.links}}" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--ink)"></path>
+          <path d="{{arm.fingers}}" fill="none" stroke-width="3" stroke-linecap="round" style="stroke: var(--ink)"></path>
+          <path d="{{arm.pencil}}" fill="none" stroke-width="6" style="stroke: var(--accent)"></path>
+          <path d="{{arm.nib}}" style="fill: var(--ink)"></path>
+          <circle cx="80" cy="236" r="8" stroke-width="2.5" style="fill: var(--page); stroke: var(--ink)"></circle><circle cx="80" cy="236" r="2.5" style="fill: var(--accent)"></circle>
+          <circle cx="{{arm.ex}}" cy="{{arm.ey}}" r="8" stroke-width="2.5" style="fill: var(--page); stroke: var(--ink)"></circle><circle cx="{{arm.ex}}" cy="{{arm.ey}}" r="2.5" style="fill: var(--accent)"></circle>
+          <circle cx="{{arm.wx}}" cy="{{arm.wy}}" r="6" stroke-width="2.5" style="fill: var(--page); stroke: var(--ink)"></circle>
+          <text x="{{arm.lx}}" y="{{arm.ly}}" style="fill: var(--muted); font-family: 'Geist Mono', monospace; font-size: 12px">θ2</text>
+          <text x="96" y="222" style="fill: var(--muted); font-family: 'Geist Mono', monospace; font-size: 12px">θ1</text>
+          <path d="M18 298 H50 M44 294 L50 298 L44 302 M18 298 V266 M14 272 L18 266 L22 272" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--accent)"></path>
+          <text x="55" y="302" style="fill: var(--accent); font-family: 'Geist Mono', monospace; font-size: 11px">x</text>
+          <text x="14" y="260" style="fill: var(--accent); font-family: 'Geist Mono', monospace; font-size: 11px">y</text>
+        </svg>
+        <figcaption style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px; font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted)">
+          <span>fig. · click and drag in the pad. it'll sketch for you</span>
+          <button type="button" onClick="{{clearPad}}" style="min-height: 32px; padding: 0 12px; border: 1px solid var(--rule); border-radius: 999px; background: transparent; color: var(--ink); font: inherit; letter-spacing: 0.08em; cursor: pointer">Clear</button>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- Dedication: To the recruiters -->
+    <section aria-label="Dedication" style="padding: 72px 0 88px; max-width: 886px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; border-top: 1px solid var(--rule)">
+      <div style="display: flex; align-items: center; justify-content: center; gap: clamp(8px, 2vw, 24px); max-width: 600px">
+        <svg aria-hidden="true" viewBox="-4 -4 76 182" style="flex: 0 0 auto; width: clamp(44px, 6vw, 64px); height: auto"><path d="M60 170 C16 146 6 80 36 8" fill="none" stroke-width="1.6" stroke-linecap="round" style="stroke: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(50.1 163.5) rotate(-180) scale(0.98)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(50.1 163.5) rotate(-104) scale(0.98)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(37.5 150.5) rotate(-165) scale(0.95)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(37.5 150.5) rotate(-89) scale(0.95)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(28.0 134.4) rotate(-152) scale(0.92)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(28.0 134.4) rotate(-76) scale(0.92)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(21.9 115.6) rotate(-141) scale(0.89)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(21.9 115.6) rotate(-65) scale(0.89)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(19.0 94.4) rotate(-131) scale(0.86)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(19.0 94.4) rotate(-55) scale(0.86)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(19.5 71.3) rotate(-123) scale(0.83)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(19.5 71.3) rotate(-47) scale(0.83)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(23.5 46.7) rotate(-115) scale(0.80)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(23.5 46.7) rotate(-39) scale(0.80)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(31.0 20.9) rotate(-108) scale(0.77)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(31.0 20.9) rotate(-32) scale(0.77)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(36.0 8.0) rotate(-67) scale(0.7)" style="fill: var(--accent)"></path></svg>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; min-width: 0">
+          <span style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent)">To</span>
+          <p style="margin: 0; max-width: 420px; font-weight: 500; font-size: clamp(22px, 2.6vw, 32px); line-height: 1.3; letter-spacing: -0.02em">the recruiters who made it past the title page.</p>
+          <span aria-hidden="true" style="color: var(--accent); font-size: 12px; letter-spacing: 0.3em">★ ★ ★</span>
+        </div>
+        <svg aria-hidden="true" viewBox="-4 -4 76 182" style="flex: 0 0 auto; width: clamp(44px, 6vw, 64px); height: auto; transform: scaleX(-1)"><path d="M60 170 C16 146 6 80 36 8" fill="none" stroke-width="1.6" stroke-linecap="round" style="stroke: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(50.1 163.5) rotate(-180) scale(0.98)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(50.1 163.5) rotate(-104) scale(0.98)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(37.5 150.5) rotate(-165) scale(0.95)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(37.5 150.5) rotate(-89) scale(0.95)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(28.0 134.4) rotate(-152) scale(0.92)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(28.0 134.4) rotate(-76) scale(0.92)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(21.9 115.6) rotate(-141) scale(0.89)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(21.9 115.6) rotate(-65) scale(0.89)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(19.0 94.4) rotate(-131) scale(0.86)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(19.0 94.4) rotate(-55) scale(0.86)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(19.5 71.3) rotate(-123) scale(0.83)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(19.5 71.3) rotate(-47) scale(0.83)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(23.5 46.7) rotate(-115) scale(0.80)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(23.5 46.7) rotate(-39) scale(0.80)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(31.0 20.9) rotate(-108) scale(0.77)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(31.0 20.9) rotate(-32) scale(0.77)" style="fill: var(--accent)"></path><path d="M0 0 C5 -6 15 -6 20 0 C15 6 5 6 0 0Z" transform="translate(36.0 8.0) rotate(-67) scale(0.7)" style="fill: var(--accent)"></path></svg>
+      </div>
+      <p style="margin: 0; max-width: 480px; font-size: 17px; line-height: 1.65; color: var(--muted)">I'm looking for Summer 2027 software engineering internships in robotics. If that's you, you can read through the pages or skip straight to the last chapter.&nbsp;</p>
+      <a href="#correspondence" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid var(--ink); color: var(--ink); text-decoration: none; font-weight: 500; font-size: 15px">
+        Skip to Correspondence
+        <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"></path></svg>
+      </a>
+    </section>
+
+    <!-- Contents -->
+    <section id="contents" aria-labelledby="contents-h" style="padding-top: 56px; max-width: 660px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted)"><span>Yashasvi Sorapalli</span><span>Contents</span></div>
+      <div style="max-width: 600px; padding-top: 36px">
+        <h2 id="contents-h" style="margin: 0 0 12px; font-weight: 600; font-size: clamp(32px, 3.6vw, 44px); line-height: 1.1; letter-spacing: -0.03em">Contents</h2>
+        <ol style="list-style: none; margin: 0; padding: 0">
+          <sc-for list="{{route}}" as="item" hint-placeholder-count="7">
+            <li style="border-bottom: 1px solid var(--rule)">
+              <a href="{{item.href}}" style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 14px; padding: 14px 0; text-decoration: none; color: var(--ink)">
+                <span style="font-size: 19px; font-weight: 500">{{item.title}}</span>
+                <span style="font-size: 15px; color: var(--muted)">{{item.note}}</span>
+              </a>
+            </li>
+          </sc-for>
+        </ol>
+        <p style="margin: 16px 0 0; font-size: 15px; line-height: 1.55; color: var(--muted)">Start anywhere, it's not that kind of book. The route in the margin keeps track of where you are.</p>
+      </div>
+    </section>
+
+    <!-- Prologue -->
+    <section id="prologue" aria-labelledby="prologue-h" style="padding-top: 96px; max-width: 660px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted)"><span>Yashasvi Sorapalli</span><span>Prologue</span></div>
+      <div style="max-width: 600px; padding-top: 36px; display: flex; flex-direction: column; gap: 20px; font-size: 18px; line-height: 1.7">
+        <h2 id="prologue-h" style="margin: 0; font-weight: 600; font-size: clamp(32px, 3.6vw, 44px); line-height: 1.1; letter-spacing: -0.03em">Prologue</h2>
+        <p style="margin: 0">Hi, I'm Yashasvi, a graduate student in Robotic Systems Development at Carnegie Mellon. I'm still exploring different corners of robotics to figure out where I fit. Planning and decision making are what I'm most curious about and hope to work on next; for now I'm learning a bit of everything, perception included.</p>
+        <p style="margin: 0">Before CMU I spent two years as a software engineer at Visa and BT Group, building dashboards, automating cleanup jobs, and keeping systems running for the people who depended on them.</p>
+        <p style="margin: 0">Outside the lab I sketch, swim, rollerskate and read, usually with indie music playing, and happiest when it's raining.</p>
+        <figure style="margin: 12px 0 0; display: flex; flex-direction: column; align-items: center; gap: 12px">
+          <div style="padding: 12px; border: 1px solid var(--rule)">
+            <img src="/_blob/594f42f4860de6e418fa3f4c4e72bb09" alt="Portrait of Yashasvi Sorapalli" style="display: block; width: min(340px, 70vw); aspect-ratio: 17 / 20; object-fit: cover; object-position: 50% 22%">
+          </div>
+          <figcaption style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted)">Plate · The author, Pittsburgh</figcaption>
+        </figure>
+        <figure class="praise-inline" style="margin: 8px 0 0; flex-direction: column; gap: 6px; padding: 14px 0 0; border-top: 1px dashed var(--rule)">
+          <span style="color: var(--accent); letter-spacing: 0.18em; font-size: 12px">★★★★★</span>
+          <blockquote style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.4">“{{p0.text}}”</blockquote>
+          <figcaption style="font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted)">{{p0.who}}</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- What I'm working on -->
+    <section id="work" aria-labelledby="work-h" style="padding-top: 96px; max-width: 660px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted)"><span>Yashasvi Sorapalli</span><span>What I'm working on</span></div>
+      <div style="max-width: 600px; padding-top: 36px; display: flex; flex-direction: column; gap: 20px; font-size: 18px; line-height: 1.7">
+        <h2 id="work-h" style="margin: 0; font-weight: 600; font-size: clamp(32px, 3.6vw, 44px); line-height: 1.1; letter-spacing: -0.03em">What I'm working on</h2>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted)">
+          <span style="display: inline-flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 999px; background: #2FA36B; box-shadow: 0 0 0 4px rgba(47, 163, 107, 0.18)"></span>Status: ongoing</span>
+          <span>CMU MRSD · 2026–2028</span>
+        </div>
+        <p style="margin: 0; font-size: 20px; line-height: 1.5; color: var(--muted)">A lab robot that runs its own experiments, and notices when they go wrong.</p>
+        <p style="margin: 0">At Carnegie Mellon, my team is building an autonomous robotic system for running closed-loop lab experiments. The goal is cell cultures, but they're hard to train on, so we're starting with bacterial growth as a baseline that behaves in a similar way.</p>
+        <p style="margin: 0">The robot has to see the bench, plan a sequence of steps, handle samples, and log what happened. Right now the project's focus is anomaly detection and failure recovery: noticing that something went wrong, and deciding what to do about it.</p>
+        <figure style="margin: 8px 0 0; display: flex; flex-direction: column; gap: 10px">
+          <div style="background: var(--plate); padding: 12px; border: 1px solid var(--rule)">
+            <img src="/_blob/c03b3493c40ee813077619f21dec08e7" alt="System diagram: task input, perception, planning, grasping, transport, logging and feedback around a robot arm" style="display: block; width: 100%; height: auto">
+          </div>
+          <figcaption style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.06em; line-height: 1.6; text-transform: uppercase; color: var(--muted)">Fig. · The loop, from a task request to a logged result</figcaption>
+        </figure>
+        <p style="margin: 0">If it works, the stretch goal is to run the full loop on real cell culture experiments, and to look inside the vision-language-action models that drive it.</p>
+        <a href="Book-Projects.dc.html" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 16px; font-weight: 500">See all projects, including GitHub →</a>
+        <figure class="praise-inline" style="margin: 8px 0 0; flex-direction: column; gap: 6px; padding: 14px 0 0; border-top: 1px dashed var(--rule)">
+          <span style="color: var(--accent); letter-spacing: 0.18em; font-size: 12px">★★★★★</span>
+          <blockquote style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.4">“{{p1.text}}”</blockquote>
+          <figcaption style="font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted)">{{p1.who}}</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Published works -->
+    <section id="papers" aria-labelledby="papers-h" style="padding-top: 96px; max-width: 660px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted)"><span>Yashasvi Sorapalli</span><span>Published works</span></div>
+      <div style="max-width: 600px; padding-top: 36px; display: flex; flex-direction: column; gap: 28px">
+        <h2 id="papers-h" style="margin: 0; font-weight: 600; font-size: clamp(32px, 3.6vw, 44px); line-height: 1.1; letter-spacing: -0.03em">Published works</h2>
+        <article style="display: flex; flex-direction: column; gap: 8px; padding-left: 20px; border-left: 2px solid var(--accent)">
+          <h3 style="margin: 0; font-weight: 500; font-size: 19px; line-height: 1.45">Multi-camera Multi-person Tracking with DeepSORT and MySQL</h3>
+          <p style="margin: 0; font-family: 'Geist Mono', monospace; font-size: 12px; line-height: 1.6; color: var(--muted)">Indonesian Journal of Electrical Engineering and Computer Science · vol. 38, no. 2 · 2025</p>
+          <p style="margin: 0; font-size: 16px; line-height: 1.65; color: var(--muted)">Extended single-camera DeepSORT to a network of cameras, sharing track data through MySQL and keeping identities stable through occlusion. It started as an undergrad project, built with a team of four.</p>
+          <a href="https://ijeecs.iaescore.com/index.php/IJEECS/article/view/37989" style="align-self: flex-start; font-size: 15px; font-weight: 500; padding: 8px 0">Read the paper ↗</a>
+        </article>
+        <article style="display: flex; flex-direction: column; gap: 8px; padding-left: 20px; border-left: 2px solid var(--accent)">
+          <h3 style="margin: 0; font-weight: 500; font-size: 19px; line-height: 1.45">Decentralized Document Storage with NFT Authentication Using Blockchain Technology</h3>
+          <p style="margin: 0; font-family: 'Geist Mono', monospace; font-size: 12px; line-height: 1.6; color: var(--muted)">IEEE CSITSS · 2024</p>
+          <p style="margin: 0; font-size: 16px; line-height: 1.65; color: var(--muted)">A blockchain, NFT and IPFS based system for storing and authenticating documents. My main role was validating the system and its authentication workflow.</p>
+          <a href="https://doi.org/10.1109/CSITSS64042.2024.10816830" style="align-self: flex-start; font-size: 15px; font-weight: 500; padding: 8px 0">Read the paper ↗</a>
+        </article>
+        <figure class="praise-inline" style="margin: 0; flex-direction: column; gap: 6px; padding: 14px 0 0; border-top: 1px dashed var(--rule)">
+          <span style="color: var(--accent); letter-spacing: 0.18em; font-size: 12px">★★★★★</span>
+          <blockquote style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.4">“{{p2.text}}”</blockquote>
+          <figcaption style="font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted)">{{p2.who}}</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Before all this: trajectory -->
+    <section id="before" aria-labelledby="before-h" style="padding-top: 96px; max-width: 660px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted)"><span>Yashasvi Sorapalli</span><span>Before all this</span></div>
+      <div style="padding-top: 36px; max-width: 640px; display: flex; flex-direction: column; gap: 24px">
+        <h2 id="before-h" style="margin: 0; font-weight: 600; font-size: clamp(32px, 3.6vw, 44px); line-height: 1.1; letter-spacing: -0.03em">Before all this</h2>
+        <ol style="list-style: none; margin: 0; padding: 0">
+          <sc-for list="{{history}}" as="h" hint-placeholder-count="5">
+            <li style="position: relative; margin-left: 7px; padding: 0 0 28px 28px; border-left: 1.5px {{h.seg}} var(--rule)">
+              <span aria-hidden="true" style="position: absolute; left: -9.5px; top: 2px; width: 17px; height: 17px; box-sizing: border-box; border-radius: 999px; border: 1.5px {{h.ringStyle}} var(--accent); background: {{h.dot}}"></span>
+              <span style="display: block; font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px">{{h.years}}</span>
+              <p style="margin: 0; max-width: 580px; font-size: 18px; line-height: 1.7">{{h.text}}</p>
+            </li>
+          </sc-for>
+        </ol>
+        <figure class="praise-inline" style="margin: 0; flex-direction: column; gap: 6px; padding: 14px 0 0; border-top: 1px dashed var(--rule)">
+          <span style="color: var(--accent); letter-spacing: 0.18em; font-size: 12px">★★★★★</span>
+          <blockquote style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.4">“{{p3.text}}”</blockquote>
+          <figcaption style="font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted)">{{p3.who}}</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Further reading -->
+    <section id="further" aria-labelledby="further-h" style="padding-top: 72px; max-width: 660px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted)"><span>Yashasvi Sorapalli</span><span>Further reading</span></div>
+      <div style="max-width: 600px; padding-top: 36px; display: flex; flex-direction: column; gap: 14px; font-size: 18px; line-height: 1.7">
+        <h2 id="further-h" style="margin: 0 0 8px; font-weight: 600; font-size: clamp(32px, 3.6vw, 44px); line-height: 1.1; letter-spacing: -0.03em">Further reading</h2>
+        <h3 style="margin: 0; font-family: 'Geist Mono', monospace; font-weight: 400; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted)">Coursework, fall 2026</h3>
+        <p style="margin: 0">Introduction to Deep Learning. Robot Autonomy. Robot Mobility on Air, Land and Sea. Systems Engineering and Project Management.</p>
+        <h3 style="margin: 10px 0 0; font-family: 'Geist Mono', monospace; font-weight: 400; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted)">Certificates</h3>
+        <p style="margin: 0">Modern Robotics, Courses 1 and 2, Northwestern University (2025). Mathematics for Machine Learning, Imperial College London (2023). Accelerated Computer Science Fundamentals, University of Illinois Urbana-Champaign (2023).</p>
+        <figure class="praise-inline" style="margin: 8px 0 0; flex-direction: column; gap: 6px; padding: 14px 0 0; border-top: 1px dashed var(--rule)">
+          <span style="color: var(--accent); letter-spacing: 0.18em; font-size: 12px">★★★★★</span>
+          <blockquote style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.4">“{{p4.text}}”</blockquote>
+          <figcaption style="font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted)">{{p4.who}}</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Index of tools -->
+    <section id="index" aria-labelledby="index-h" style="padding-top: 96px; max-width: 660px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted)"><span>Yashasvi Sorapalli</span><span>Index of tools</span></div>
+      <div style="max-width: 600px; padding-top: 36px; display: flex; flex-direction: column; gap: 22px">
+        <h2 id="index-h" style="margin: 0; font-weight: 600; font-size: clamp(32px, 3.6vw, 44px); line-height: 1.1; letter-spacing: -0.03em">Index of tools</h2>
+        <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px 32px; font-size: 17px; line-height: 1.5">
+          <sc-for list="{{tools}}" as="tool" hint-placeholder-count="11">
+            <li style="padding-bottom: 10px; border-bottom: 1px solid var(--rule)">{{tool}}</li>
+          </sc-for>
+        </ul>
+        <figure class="praise-inline" style="margin: 0; flex-direction: column; gap: 6px; padding: 14px 0 0; border-top: 1px dashed var(--rule)">
+          <span style="color: var(--accent); letter-spacing: 0.18em; font-size: 12px">★★★★★</span>
+          <blockquote style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.4">“{{p5.text}}”</blockquote>
+          <figcaption style="font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted)">{{p5.who}}</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Correspondence -->
+    <section id="correspondence" aria-labelledby="corr-h" style="padding-top: 96px; max-width: 660px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted)"><span>Yashasvi Sorapalli</span><span>Correspondence</span></div>
+      <div style="max-width: 600px; padding-top: 36px; display: flex; flex-direction: column; gap: 20px">
+        <h2 id="corr-h" style="margin: 0; font-weight: 600; font-size: clamp(32px, 3.6vw, 44px); line-height: 1.1; letter-spacing: -0.03em">Correspondence</h2>
+        <p style="margin: 0; font-size: 18px; line-height: 1.7">If you're hiring for summer 2027, or just want to talk about robots, books, or the weather, write to me. I'd love to hear from you.</p>
+        <a href="mailto:ysorapalli@gmail.com" style="font-weight: 500; font-size: clamp(22px, 2.8vw, 34px); letter-spacing: -0.02em; line-height: 1.2; align-self: flex-start; word-break: break-word; text-underline-offset: 6px">ysorapalli@gmail.com</a>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; font-size: 15px">
+          <a href="Book-Connect.dc.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; background: var(--ink); color: var(--page); text-decoration: none; font-weight: 500">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            Connect &amp; latest posts
+          </a>
+          <a href="Book-Projects.dc.html" style="padding: 10px 0; font-weight: 500">Projects &amp; GitHub</a>
+          <a href="https://scholar.google.com/citations?user=qdXeEYEAAAAJ&amp;hl=en" style="padding: 10px 0; font-weight: 500">Google Scholar</a>
+          <a href="https://ysorapalli.com/data/YashasviSorapalli-Resume.pdf" style="padding: 10px 0; font-weight: 500">Resume</a>
+        </div>
+        <div aria-label="Greetings" style="display: flex; flex-direction: column; gap: 6px; padding-top: 8px">
+          <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; font-size: 20px; font-weight: 500">
+            <span>hello</span>
+            <span lang="hi" style="font-family: 'Noto Sans Devanagari', sans-serif">नमस्ते</span>
+            <span lang="te" style="font-family: 'Noto Sans Telugu', sans-serif">నమస్కారం</span>
+            <span lang="kn" style="font-family: 'Noto Sans Kannada', sans-serif">ನಮಸ್ಕಾರ</span>
+            <span lang="fr">bonjour*</span>
+          </div>
+          <span style="font-size: 14px; line-height: 1.55; color: var(--muted)">Any of these work. *French is a work in progress.</span>
+        </div>
+        <figure class="praise-inline" style="margin: 8px 0 0; flex-direction: column; gap: 6px; padding: 14px 0 0; border-top: 1px dashed var(--rule)">
+          <span style="color: var(--accent); letter-spacing: 0.18em; font-size: 12px">★★★★★</span>
+          <blockquote style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.4">“{{p6.text}}”</blockquote>
+          <figcaption style="font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted)">{{p6.who}}</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Colophon -->
+    <footer style="padding: clamp(80px, 9vw, 110px) 0 clamp(80px, 9vw, 120px); max-width: 886px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
+      <span style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted)">Colophon</span>
+      <p style="margin: 0; max-width: 540px; font-size: 15px; line-height: 1.7; color: var(--muted)">Set in Geist and Geist Mono. Written in Pittsburgh, ideally on a rainy day. Currently reading <span style="color: var(--ink)">Exhalation</span> by Ted Chiang. On repeat: <span style="color: var(--ink)">Arz Kiya Hai</span> by Anuv Jain.</p>
+      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18"><path d="M9 0V18M0 9H18" style="stroke: var(--accent)"></path><circle cx="9" cy="9" r="4" fill="none" style="stroke: var(--accent)"></circle></svg>
+      <span style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted)">© 2026 Yashasvi Sorapalli</span>
+    </footer>
+  </main>
+  <div style="height: 96px"></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"startTheme":{"editor":"enum","options":["system","light","dark"],"default":"system"},"$preview":{"width":1440,"height":7400}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { theme: null, menuOpen: false, active: -1, progress: 0, staticView: false, tip: { x: 270, y: 214 }, inkRev: 0, seed: true };
+    this.chapters = [
+      ['prologue', 'Prologue', 'Prologue', 'who I am, briefly'],
+      ['work', 'What I’m working on', 'Working on', 'a lab robot that runs its own experiments'],
+      ['papers', 'Published works', 'Papers', 'two papers'],
+      ['before', 'Before all this', 'Before', 'Bangalore, BT, Visa, CMU'],
+      ['further', 'Further reading', 'Reading', 'coursework and certificates'],
+      ['index', 'Index of tools', 'Tools', 'what I build with'],
+      ['correspondence', 'Correspondence', 'Contact', 'how to reach me']
+    ];
+    this.praise = [
+      { text: 'Best read on a rainy day.', who: 'Pittsburgh weather' },
+      { text: 'Noticed when things went wrong, then fixed them. Would malfunction for her again.', who: 'The lab robot, probably' },
+      { text: 'Kept track of everyone, even through occlusion.', who: 'A DeepSORT tracker' },
+      { text: 'A real page-turner. I logged every single page.', who: 'Her Grafana dashboards' },
+      { text: 'Grew on me.', who: 'A bacterial culture, used as a baseline' },
+      { text: 'Compiled on the first try. Mostly.', who: 'Her C++ code' },
+      { text: 'Would connect again.', who: 'Her LinkedIn connect button' }
+    ];
+    this.strokes = [];
+    this.drawing = false;
+    this.pad = { x0: 126, y0: 162, x1: 318, y1: 292 };
+    var self = this;
+    this.toSvg = function (e) {
+      var r = e.currentTarget.getBoundingClientRect();
+      return { x: (e.clientX - r.left) / r.width * 360, y: (e.clientY - r.top) / r.height * 310 };
+    };
+    this.inPad = function (p) { var d = self.pad; return p.x >= d.x0 && p.x <= d.x1 && p.y >= d.y0 && p.y <= d.y1; };
+    this.clampPad = function (p) { var d = self.pad; return { x: Math.round(Math.max(d.x0, Math.min(d.x1, p.x)) * 10) / 10, y: Math.round(Math.max(d.y0, Math.min(d.y1, p.y)) * 10) / 10 }; };
+    this.flush = function () {
+      self.moveRaf = null;
+      var p = self.pending; if (!p) return;
+      self.pending = null;
+      if (self.drawing) {
+        var s = self.strokes[self.strokes.length - 1];
+        var last = s[s.length - 1];
+        if (!last || Math.abs(last.x - p.x) + Math.abs(last.y - p.y) > 1.2) s.push(p);
+        var total = 0; for (var i = 0; i < self.strokes.length; i++) total += self.strokes[i].length;
+        while (total > 2500 && self.strokes.length > 1) { total -= self.strokes.shift().length; }
+      }
+      self.setState({ tip: p, inkRev: self.state.inkRev + 1 });
+    };
+    this.padDown = function (e) {
+      var p = self.toSvg(e);
+      if (!self.inPad(p)) return;
+      e.preventDefault();
+      try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) {}
+      p = self.clampPad(p);
+      self.drawing = true;
+      self.strokes.push([p]);
+      self.setState({ tip: p, seed: false, inkRev: self.state.inkRev + 1 });
+    };
+    this.padMove = function (e) {
+      var p = self.toSvg(e);
+      if (!self.drawing && !self.inPad(p)) return;
+      self.pending = self.clampPad(p);
+      if (!self.moveRaf) self.moveRaf = window.requestAnimationFrame(self.flush);
+    };
+    this.padUp = function () { self.drawing = false; };
+    this.clearPad = function () { self.strokes = []; self.drawing = false; self.setState({ seed: false, inkRev: self.state.inkRev + 1 }); };
+  }
+  componentDidMount() {
+    var start = this.props.startTheme ?? 'system';
+    if (!this.state.theme) {
+      if (start === 'system') {
+        var dark = false;
+        try { dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; } catch (e) {}
+        this.setState({ theme: dark ? 'dark' : 'light' });
+      } else {
+        this.setState({ theme: start });
+      }
+    }
+    var self = this;
+    this.onScroll = function () {
+      if (self.raf) return;
+      self.raf = window.requestAnimationFrame(function () { self.raf = null; self.measure(); });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    this.measure();
+    this.settle = window.setTimeout(function () { self.measure(); }, 600);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    if (this.raf) window.cancelAnimationFrame(this.raf);
+    if (this.moveRaf) window.cancelAnimationFrame(this.moveRaf);
+    window.clearTimeout(this.settle);
+  }
+  measure() {
+    var n = this.chapters.length;
+    var sy = window.scrollY || 0;
+    var y = sy + window.innerHeight * 0.35;
+    var tops = this.chapters.map(function (c) {
+      var el = document.getElementById(c[0]);
+      return el ? el.getBoundingClientRect().top + sy : Infinity;
+    });
+    var active = -1;
+    for (var i = 0; i < n; i++) { if (tops[i] <= y) active = i; }
+    var frac = 0;
+    if (active >= 0 && active < n - 1 && isFinite(tops[active + 1])) {
+      frac = Math.max(0, Math.min(1, (y - tops[active]) / (tops[active + 1] - tops[active])));
+    }
+    var doc = document.documentElement;
+    var staticView = doc.scrollHeight <= window.innerHeight + 10;
+    var atEnd = !staticView && (window.innerHeight + sy) >= doc.scrollHeight - 4;
+    if (atEnd) { active = n - 1; frac = 0; }
+    var p = active < 0 ? 0 : Math.min(1, (active + frac) / (n - 1));
+    p = Math.round(p * 200) / 200;
+    if (p !== this.state.progress || active !== this.state.active || staticView !== this.state.staticView) this.setState({ progress: p, active: active, staticView: staticView });
+  }
+  renderVals() {
+    var start = this.props.startTheme ?? 'system';
+    var theme = this.state.theme || (start === 'dark' ? 'dark' : 'light');
+    var isDark = theme === 'dark';
+    var active = this.state.active;
+    var n = this.chapters.length;
+    var route = this.chapters.map(function (c, i) {
+      var passed = active >= 0 && i < active, cur = i === active;
+      return {
+        href: '#' + c[0], title: c[1], short: c[2], note: c[3],
+        isCur: cur, current: cur ? 'location' : 'false',
+        border: passed || cur ? 'var(--accent)' : 'var(--muted)',
+        fill: passed || cur ? 'var(--accent)' : 'var(--page)',
+        glow: cur ? '0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent)' : 'none',
+        pct: Math.round(i / (n - 1) * 1000) / 10
+      };
+    });
+    var shownBlurb = this.state.staticView ? 0 : Math.max(active, 0);
+    var praise = this.praise.map(function (q, i) {
+      var on = i === shownBlurb;
+      return { text: q.text, who: q.who, op: on ? 1 : 0, ty: on ? 0 : (i < shownBlurb ? -14 : 14), hidden: on ? 'false' : 'true' };
+    });
+    var history = [
+      ['2020–24', 'I studied computer science at R.V. College of Engineering in Bangalore, where I also headed the Centre for Interdisciplinary Research in Quantum Information Technology and started doing research.'],
+      ['2024–25', 'At BT Group, first as an intern and then full time, I automated database cleanup with AWS Lambda and helped bring an unused internal product back into use.'],
+      ['2025–26', 'At Visa, I helped onboard a cross-border payments project and built monitoring dashboards in Grafana, so problems were easier to spot and debug.'],
+      ['2026–now', 'I came to Carnegie Mellon for the M.S. in Robotic Systems Development. Recently, I attended IROS 2026.'],
+      ['Next waypoint', 'A Summer 2027 software engineering internship in robotics. Still planning this route.']
+    ].map(function (r, i, a) {
+      var last = i === a.length - 1, nextToLast = i === a.length - 2;
+      return { years: r[0], text: r[1], seg: last ? 'none' : (nextToLast ? 'dashed' : 'solid'), ringStyle: last ? 'dashed' : 'solid', dot: nextToLast ? 'var(--accent)' : 'var(--page)' };
+    });
+    // inverse kinematics: shoulder at (80,236), two links, pencil hangs from the wrist
+    var L1 = 135, L2 = 125, sx = 80, sy = 236;
+    var tip = this.state.tip;
+    var wx = tip.x - 6, wy = tip.y - 30;
+    var dx = wx - sx, dy = wy - sy;
+    var d = Math.sqrt(dx * dx + dy * dy);
+    var dc = Math.max(Math.abs(L1 - L2) + 1, Math.min(L1 + L2 - 0.5, d));
+    if (d > 0 && dc !== d) { wx = sx + dx / d * dc; wy = sy + dy / d * dc; }
+    var a = Math.atan2(wy - sy, wx - sx);
+    var cb = Math.max(-1, Math.min(1, (L1 * L1 + dc * dc - L2 * L2) / (2 * L1 * dc)));
+    var t1 = a - Math.acos(cb);
+    var ex = sx + L1 * Math.cos(t1), ey = sy + L1 * Math.sin(t1);
+    var f = function (v) { return Math.round(v * 10) / 10; };
+    var arm = {
+      links: 'M' + sx + ' ' + sy + ' L' + f(ex) + ' ' + f(ey) + ' L' + f(wx) + ' ' + f(wy),
+      ex: f(ex), ey: f(ey), wx: f(wx), wy: f(wy),
+      fingers: 'M' + f(wx - 6) + ' ' + f(wy + 3) + ' L' + f(wx - 3) + ' ' + f(wy + 16) + ' M' + f(wx + 6) + ' ' + f(wy + 1) + ' L' + f(wx + 9) + ' ' + f(wy + 14),
+      pencil: 'M' + f(wx + 1.5) + ' ' + f(wy + 8) + ' L' + f(wx + 5) + ' ' + f(wy + 22),
+      nib: 'M' + f(wx + 1.6) + ' ' + f(wy + 21.5) + ' L' + f(wx + 8.4) + ' ' + f(wy + 20) + ' L' + f(wx + 6) + ' ' + f(wy + 30) + ' Z',
+      lx: f(ex + 12), ly: f(ey - 12)
+    };
+    var trail = this.state.seed ? 'M270 214 C 250 230, 232 200, 208 216 S 168 234, 146 212' : '';
+    for (var si = 0; si < this.strokes.length; si++) {
+      var s = this.strokes[si];
+      if (!s.length) continue;
+      trail += ' M' + s[0].x + ' ' + s[0].y + (s.length === 1 ? ' l0.1 0.1' : '');
+      for (var pi = 1; pi < s.length; pi++) trail += ' L' + s[pi].x + ' ' + s[pi].y;
+    }
+    return {
+      arm: arm,
+      trail: trail || 'M0 0',
+      padDown: this.padDown,
+      padMove: this.padMove,
+      padUp: this.padUp,
+      clearPad: this.clearPad,
+      praise: praise,
+      praisePos: shownBlurb + 1,
+      praiseTotal: this.praise.length,
+      cur: this.praise[shownBlurb],
+      p0: this.praise[0], p1: this.praise[1], p2: this.praise[2], p3: this.praise[3], p4: this.praise[4], p5: this.praise[5], p6: this.praise[6],
+      theme: theme,
+      lightPressed: isDark ? 'false' : 'true',
+      darkPressed: isDark ? 'true' : 'false',
+      lightBg: isDark ? 'transparent' : 'var(--ink)',
+      lightFg: isDark ? 'var(--muted)' : 'var(--page)',
+      darkBg: isDark ? 'var(--ink)' : 'transparent',
+      darkFg: isDark ? 'var(--page)' : 'var(--muted)',
+      setLight: () => this.setState({ theme: 'light' }),
+      setDark: () => this.setState({ theme: 'dark' }),
+      menuOpen: this.state.menuOpen,
+      menuExpanded: this.state.menuOpen ? 'true' : 'false',
+      toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      route: route,
+      fillPx: Math.round(this.state.progress * 240),
+      pct: Math.round(this.state.progress * 1000) / 10,
+      currentShort: active >= 0 ? this.chapters[active][2] : 'Start',
+      history: history,
+      tools: ['C++', 'Deep learning', 'Java', 'LabVIEW', 'Linux', 'MATLAB', 'Python', 'PyTorch', 'ROS 2', 'Spring Boot', 'SQL / MySQL']
+    };
+  }
+}
+</script>
+</body>
+</html>
