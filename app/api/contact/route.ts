@@ -56,7 +56,7 @@ export async function POST(req: Request) {
       from: process.env.CONTACT_FROM_EMAIL || "Portfolio <onboarding@resend.dev>",
       to: [process.env.CONTACT_TO_EMAIL || site.email],
       reply_to: email,
-      subject: `[ysorapalli.com] ${topic} · ${name}`,
+      subject: `[portfolio] ${topic} · ${name}`,
       text: `${message}\n\n---\nFrom: ${name} <${email}>\nTopic: ${topic}`,
     }),
   }).catch(() => null);

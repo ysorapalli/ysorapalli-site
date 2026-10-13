@@ -3,7 +3,7 @@
 
 export const site = {
   name: "Yashasvi Sorapalli",
-  url: "https://ysorapalli.com",
+  url: "https://ysorapalli.vercel.app",
   email: "ysorapalli@gmail.com",
   location: "Pittsburgh, PA",
   resume: "/data/YashasviSorapalli-Resume.pdf",
