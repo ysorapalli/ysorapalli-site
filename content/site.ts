@@ -19,9 +19,9 @@ export const site = {
 
 export const titlePage = {
   kicker: "A portfolio",
-  subtitle: "Robots, research, and figuring out what I want to build.",
+  subtitle: "Robots, research, and figuring out what I want to build next.",
   imprint: "Carnegie Mellon University · Pittsburgh · 2026",
-  armCaption: "fig. · click and drag in the pad. it'll sketch for you",
+  armCaption: "click and drag in the pad. it'll sketch for you",
 };
 
 export const dedication = {
@@ -48,12 +48,12 @@ export const praise = [
   { text: "Noticed when things went wrong, then fixed them. Would malfunction for her again.", who: "The lab robot, probably" },
   { text: "Kept track of everyone, even through occlusion.", who: "A DeepSORT tracker" },
   { text: "A real page-turner. I logged every single page.", who: "Her Grafana dashboards" },
-  { text: "Grew on me.", who: "A bacterial culture, used as a baseline" },
+  { text: "Grew on me.", who: "Bacteria on a petri dish, probably" },
   { text: "Compiled on the first try. Mostly.", who: "Her C++ code" },
   { text: "Would connect again.", who: "Her LinkedIn connect button" },
 ];
 
-export const contentsNote = "Start anywhere, it's not that kind of book. The route in the margin keeps track of where you are.";
+export const contentsNote = "Start anywhere, it's not that kind of book. The route in the margin will keep track of where you are.";
 
 export const prologue = {
   paragraphs: [
@@ -66,7 +66,7 @@ export const prologue = {
 
 export const work = {
   status: "Status: ongoing",
-  meta: "CMU MRSD · 2026–2028",
+  meta: "CMU MRSD · 2026-2028",
   lead: "A lab robot that runs its own experiments, and notices when they go wrong.",
   paragraphs: [
     "At Carnegie Mellon, my team is building an autonomous robotic system for running closed-loop lab experiments. The goal is cell cultures, but they're hard to train on, so we're starting with bacterial growth as a baseline that behaves in a similar way.",
@@ -96,11 +96,11 @@ export const papers = [
 
 // Timeline. The second-to-last node is "you are here" (filled); the last is dashed (future).
 export const history = [
-  { years: "2020–24", text: "I studied computer science at R.V. College of Engineering in Bangalore, where I also headed the Centre for Interdisciplinary Research in Quantum Information Technology and started doing research." },
-  { years: "2024–25", text: "At BT Group, first as an intern and then full time, I automated database cleanup with AWS Lambda and helped bring an unused internal product back into use." },
-  { years: "2025–26", text: "At Visa, I helped onboard a cross-border payments project and built monitoring dashboards in Grafana, so problems were easier to spot and debug." },
-  { years: "2026–now", text: "I came to Carnegie Mellon for the M.S. in Robotic Systems Development. Recently, I attended IROS 2026." },
-  { years: "Next waypoint", text: "A Summer 2027 software engineering internship in robotics. Still planning the route." },
+  { years: "2020-24", text: "I studied computer science at R.V. College of Engineering in Bangalore, where I also headed the Centre for Interdisciplinary Research in Quantum Information Technology and started doing research." },
+  { years: "2024-25", text: "At BT Group, first as an intern and then full time, I automated database cleanup with AWS Lambda and helped bring an unused internal product back into use." },
+  { years: "2025-26", text: "At Visa, I helped onboard a cross-border payments project and built monitoring dashboards in Grafana, so problems were easier to spot and debug." },
+  { years: "2026-now", text: "I came to Carnegie Mellon for the M.S. in Robotic Systems Development. Recently, I attended IROS 2026." },
+  { years: "Next", text: "A Summer 2027 software engineering internship in robotics. Still planning the route." },
 ];
 
 export const furtherReading = {
@@ -139,7 +139,7 @@ export const projectsPage = {
   works: [
     {
       title: "Autonomous robotic system for closed-loop lab experiments",
-      meta: "CMU MRSD · 2026–2028", ongoing: true,
+      meta: "CMU MRSD · 2026-2028", ongoing: true,
       image: "/images/projects/autonomous-laboratory.jpg", imagePosition: "50% 20%",
       alt: "System diagram of the autonomous lab robot workflow",
       summary: "A lab robot that runs experiments end to end. The goal is cell cultures; for now we use bacterial growth as a baseline. Current focus: anomaly detection and failure recovery.",
@@ -148,7 +148,7 @@ export const projectsPage = {
     },
     {
       title: "Multi-camera multi-person tracking with DeepSORT and MySQL",
-      meta: "RVCE · 2022–2023 · IJEECS 2025", ongoing: false,
+      meta: "RVCE · 2022-2023 · IJEECS 2025", ongoing: false,
       image: "/images/projects/multicamera-tracking.jpg", imagePosition: "50% 0%",
       alt: "Accuracy chart and ID assignment frames comparing original and enhanced DeepSORT",
       summary: "Extended single-camera DeepSORT to a network of cameras, sharing track data through MySQL and keeping identities stable through occlusion. Built with a team of four.",
@@ -195,6 +195,6 @@ export const contactForm = {
   topics: ["Roles & internships", "Research", "Coffee chat", "Just saying hi"],
   defaultTopic: "Roles & internships",
   messagePlaceholder: "Hi Yashasvi, I saw your work on…",
-  sent: "Thanks! Your note is on its way. I'll reply to the email you gave.",
+  sent: "Thanks! Your note is on its way. I'll reply shortly.",
 };
 
