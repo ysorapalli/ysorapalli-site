@@ -82,7 +82,7 @@ export const papers = [
     title: "Multi-camera Multi-person Tracking with DeepSORT and MySQL",
     venue: "Indonesian Journal of Electrical Engineering and Computer Science · vol. 38, no. 2 · 2025",
     summary: "Extended single-camera DeepSORT to a network of cameras, sharing track data through MySQL and keeping identities stable through occlusion. It started as an undergrad project, built with a team of four.",
-    href: "https://ijeecs.iaescore.com/index.php/IJEECS/article/view/37989",
+    href: "https://www.researchgate.net/publication/391352244_Multi-camera_multi-person_tracking_with_DeepSORT_and_MySQL",
     doi: "10.11591/ijeecs.v38.i2.pp997-1009",
   },
   {
@@ -153,7 +153,7 @@ export const projectsPage = {
       alt: "Accuracy chart and ID assignment frames comparing original and enhanced DeepSORT",
       summary: "Extended single-camera DeepSORT to a network of cameras, sharing track data through MySQL and keeping identities stable through occlusion. Built with a team of four.",
       tags: ["Python", "DeepSORT", "MySQL", "Computer vision"],
-      cta: { label: "Read the paper ↗", href: "https://ijeecs.iaescore.com/index.php/IJEECS/article/view/37989" },
+      cta: { label: "Read the paper ↗", href: "https://www.researchgate.net/publication/391352244_Multi-camera_multi-person_tracking_with_DeepSORT_and_MySQL" },
     },
     {
       title: "Decentralized document storage with NFT authentication",
