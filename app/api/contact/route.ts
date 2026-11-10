@@ -1,4 +1,4 @@
-import { contactForm, site } from "@/content/site";
+import { contactForm } from "@/content/site";
 
 export const runtime = "nodejs";
 
@@ -15,7 +15,8 @@ function rateLimited(ip: string): boolean {
   return recent.length > MAX_PER_WINDOW;
 }
 
-const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
+const str = (v: unknown, max: number) =>
+  typeof v === "string" ? v.trim().slice(0, max) : "";
 
 export async function POST(req: Request) {
   let body: Record<string, unknown>;
@@ -32,37 +33,72 @@ export async function POST(req: Request) {
   const email = str(body.email, 200);
   const message = str(body.message, 5000);
   const topicRaw = str(body.topic, 60);
-  const topic = (contactForm.topics as readonly string[]).includes(topicRaw) ? topicRaw : contactForm.defaultTopic;
+  const topic = (contactForm.topics as readonly string[]).includes(topicRaw)
+    ? topicRaw
+    : contactForm.defaultTopic;
 
   if (!name || !message || !EMAIL_RE.test(email)) {
-    return Response.json({ error: "Please add your name, a valid email and a message." }, { status: 400 });
+    return Response.json(
+      { error: "Please add your name, a valid email and a message." },
+      { status: 400 },
+    );
   }
 
-  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  const ip =
+    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
   if (rateLimited(ip)) {
-    return Response.json({ error: "That's a lot of notes. Please try again in a few minutes." }, { status: 429 });
+    return Response.json(
+      { error: "That's a lot of notes. Please try again in a few minutes." },
+      { status: 429 },
+    );
   }
 
   const key = process.env.RESEND_API_KEY;
-  if (!key) {
-    // Not configured yet: the form falls back to the visitor's email app.
-    return Response.json({ error: "Email delivery isn't set up yet.", fallback: "mailto" }, { status: 503 });
+  if (
+    !key ||
+    !process.env.CONTACT_FROM_EMAIL ||
+    !process.env.CONTACT_TO_EMAIL
+  ) {
+    // TODO: configure verified server-only delivery settings before enabling delivery.
+    return Response.json(
+      {
+        error:
+          "Note delivery is not available yet. Please connect on LinkedIn.",
+      },
+      { status: 503 },
+    );
   }
 
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
-    headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+    headers: {
+      Authorization: `Bearer ${key}`,
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify({
-      from: process.env.CONTACT_FROM_EMAIL || "Portfolio <onboarding@resend.dev>",
-      to: [process.env.CONTACT_TO_EMAIL || site.email],
+      from: process.env.CONTACT_FROM_EMAIL,
+      to: [process.env.CONTACT_TO_EMAIL],
       reply_to: email,
       subject: `[portfolio] ${topic} · ${name}`,
       text: `${message}\n\n---\nFrom: ${name} <${email}>\nTopic: ${topic}`,
     }),
-  }).catch(() => null);
+  }).catch((err: unknown) => {
+    console.error("[contact] Resend request failed:", err);
+    return null;
+  });
 
   if (!res || !res.ok) {
-    return Response.json({ error: "Couldn't send right now.", fallback: "mailto" }, { status: 502 });
+    // Log Resend's reason (e.g. unverified sender) server-side; visitors get the generic message.
+    if (res) {
+      console.error(
+        `[contact] Resend rejected the note (${res.status}):`,
+        await res.text().catch(() => ""),
+      );
+    }
+    return Response.json(
+      { error: "Couldn't send right now. Please try again later." },
+      { status: 502 },
+    );
   }
   return Response.json({ ok: true });
 }

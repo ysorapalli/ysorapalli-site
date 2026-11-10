@@ -86,7 +86,6 @@ export default function ArmSketchPad() {
     }
     setTip(p);
     if (drawing.current) setTrail(buildTrail());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onDown = (e: PointerEvent<SVGSVGElement>) => {

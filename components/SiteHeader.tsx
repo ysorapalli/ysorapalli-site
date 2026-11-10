@@ -6,31 +6,43 @@ import { site } from "@/content/site";
 import ThemeToggle from "./ThemeToggle";
 import { MenuIcon } from "./icons";
 
-type Current = "book" | "projects";
+type Current = "book" | "projects" | "about" | "contact" | "resume";
 
 export default function SiteHeader({ current }: { current: Current }) {
   const [open, setOpen] = useState(false);
-  const onBook = current === "book";
   const close = () => setOpen(false);
 
   const links = [
-    { href: onBook ? "#contents" : "/#contents", label: "Contents", key: "contents" },
+    { href: "/", label: "Home", key: "book" },
+    { href: "/about", label: "About", key: "about" },
     { href: "/projects", label: "Projects", key: "projects" },
-    { href: onBook ? "#correspondence" : "/#correspondence", label: "Contact", key: "contact" },
+    { href: site.resume, label: "Resume", key: "resume" },
+    { href: "/contact", label: "Contact", key: "contact" },
   ];
 
   return (
-    <>
+    <div
+      className="header-wrap"
+      onKeyDown={(event) => {
+        if (event.key === "Escape") setOpen(false);
+      }}
+    >
       <header className="site-header">
-        <Link className="brand" href="/">{site.name}</Link>
+        <Link className="brand" href="/">
+          {site.name}
+        </Link>
         <div className="nav-right">
           <nav className="nav-links" aria-label="Primary">
             {links.map((l) => (
-              <Link key={l.key} className="nav-link" href={l.href} aria-current={l.key === current ? "page" : undefined}>
+              <Link
+                key={l.key}
+                className="nav-link"
+                href={l.href}
+                aria-current={l.key === current ? "page" : undefined}
+              >
                 {l.label}
               </Link>
             ))}
-            <a className="nav-resume" href={site.resume} target="_blank" rel="noopener noreferrer">Resume</a>
           </nav>
           <ThemeToggle />
           <button
@@ -48,13 +60,17 @@ export default function SiteHeader({ current }: { current: Current }) {
       {open && (
         <nav id="nav-sheet" className="nav-sheet" aria-label="Menu">
           {links.map((l) => (
-            <Link key={l.key} href={l.href} onClick={close} aria-current={l.key === current ? "page" : undefined}>
+            <Link
+              key={l.key}
+              href={l.href}
+              onClick={close}
+              aria-current={l.key === current ? "page" : undefined}
+            >
               {l.label}
             </Link>
           ))}
-          <a href={site.resume} target="_blank" rel="noopener noreferrer" onClick={close}>Resume</a>
         </nav>
       )}
-    </>
+    </div>
   );
 }

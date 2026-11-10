@@ -3,7 +3,7 @@
 Hand this file to a new chat to continue the work.
 
 ## Who / what
-- Owner: Yashasvi Sorapalli (robotics grad student, CMU MRSD 2026–2028). Site: https://ysorapalli.com (Vercel). Email ysorapalli@gmail.com.
+- Owner: Yashasvi Sorapalli (robotics grad student, CMU MRSD 2026–2028). Site: https://ysorapalli.vercel.app (Vercel; commit 6e4eb12 switched from ysorapalli.com, which is not the live URL).
 - This project is a **new repo** that replaces the old site (old repo: `~/portfolio/ethanvillalovoz.github.io`, a Next.js template). Same Vercel URL.
 - Design source: Claude canvas artifact "Robotics Portfolio Landing", option **C** (artboards `Book`, `Book-Connect`, `Book-Projects` + mobile). Handoff package: `~/portfolio/portfolio-design-C/` (DESIGN_HANDOFF.md, tokens, content/site.ts, reference/*.dc.html, public assets).
 
@@ -26,3 +26,7 @@ Hand this file to a new chat to continue the work.
 - [ ] Owner inputs (she said she'll add them herself): Resend key + verified sender, optional GitHub token → `.env.local` and Vercel env vars.
 - [x] Owner ran `npm install` locally on 12 Oct (package-lock.json and .next exist); build result not reported.
 - [ ] Deploy: point the existing Vercel project at this repo (or move the domain), add env vars.
+
+## November 2026 portfolio update
+
+The current routes are Home, About, Projects, Resume, and Contact. Background and the reader guide live on About. Five shared project entries provide cards and detail routes; the GitHub list is a curated snapshot pending author updates. The What I’m Working On draft remains unchanged in content/site.ts for later correction. Private resume files belong in ignored .private/, never public/. Contact delivery has no mailto fallback and requires all three server-only Resend settings. See README.md for current verification and content TODOs. Earlier status notes above describe the prior design.

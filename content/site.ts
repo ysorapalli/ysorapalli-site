@@ -4,9 +4,8 @@
 export const site = {
   name: "Yashasvi Sorapalli",
   url: "https://ysorapalli.vercel.app",
-  email: "ysorapalli@gmail.com",
   location: "Pittsburgh, PA",
-  resume: "/data/YashasviSorapalli-Resume.pdf",
+  resume: "/resume",
   links: {
     linkedin: "https://www.linkedin.com/in/yashasvi-s/",
     github: "https://github.com/ysorapalli",
@@ -22,13 +21,6 @@ export const titlePage = {
   subtitle: "Robots, research, and figuring out what I want to build next.",
   imprint: "Carnegie Mellon University · Pittsburgh · 2026",
   armCaption: "click and drag in the pad. it'll sketch for you",
-};
-
-export const dedication = {
-  kicker: "To",
-  line: "the recruiters who made it past the title page.",
-  body: "I'm looking for Summer 2027 software engineering internships in robotics. If that's you, you can read through the pages or skip straight to the last chapter.",
-  cta: { label: "Skip to Correspondence", href: "#correspondence" },
 };
 
 // Order = reading order = route rail order. `short` is the label on the rails/top bar.
@@ -131,20 +123,19 @@ export const colophon = {
 // /projects
 export const projectsPage = {
   title: "Collected works",
-  intro: "Everything I've built or am building. The shelf at the bottom keeps itself up to date from my GitHub.",
+  intro: "Robotics, research, and software projects.",
   githubHeading: "Fresh off the shelf",
   githubIntro: "My public repositories, newest push first.",
   githubPraise: { text: "Pushed to main. Respectfully.", who: "Her git history" },
   emptySlot: "Next push lands here automatically.",
   works: [
     {
-      title: "Autonomous robotic system for closed-loop lab experiments",
+      title: "DARWIN: autonomous robotic system for closed-loop lab experiments",
       meta: "CMU MRSD · 2026-2028", ongoing: true,
       image: "/images/projects/autonomous-laboratory.jpg", imagePosition: "50% 20%",
       alt: "System diagram of the autonomous lab robot workflow",
-      summary: "A lab robot that runs experiments end to end. The goal is cell cultures; for now we use bacterial growth as a baseline. Current focus: anomaly detection and failure recovery.",
+      summary: "DARWIN is my capstone team's autonomous robotic system for running wet-lab experiments end to end. The goal is cell cultures; for now we use bacterial growth as a baseline. Current focus: anomaly detection and failure recovery.",
       tags: ["Manipulation", "Task planning", "Anomaly detection", "Failure recovery", "Perception"],
-      cta: { label: "Read the chapter →", href: "/#work" },
     },
     {
       title: "Multi-camera multi-person tracking with DeepSORT and MySQL",
@@ -153,7 +144,6 @@ export const projectsPage = {
       alt: "Accuracy chart and ID assignment frames comparing original and enhanced DeepSORT",
       summary: "Extended single-camera DeepSORT to a network of cameras, sharing track data through MySQL and keeping identities stable through occlusion. Built with a team of four.",
       tags: ["Python", "DeepSORT", "MySQL", "Computer vision"],
-      cta: { label: "Read the paper ↗", href: "https://www.researchgate.net/publication/391352244_Multi-camera_multi-person_tracking_with_DeepSORT_and_MySQL" },
     },
     {
       title: "Decentralized document storage with NFT authentication",
@@ -162,11 +152,60 @@ export const projectsPage = {
       alt: "Architecture diagram for document storage using blockchain, IPFS and smart contracts",
       summary: "A blockchain, NFT and IPFS based system for storing and authenticating documents. My main role was validating the system and its authentication workflow.",
       tags: ["Blockchain", "NFTs", "IPFS", "Smart contracts"],
-      cta: { label: "Read the paper ↗", href: "https://doi.org/10.1109/CSITSS64042.2024.10816830" },
+    },
+  ],
+  // Course and side projects. `featured` ones join the main selection; planned ones list after it.
+  courseProjects: [
+    {
+      title: "Generalization and uncertainty in deep energy models for delivery drones",
+      slug: "drone-energy-models",
+      meta: "CMU Introduction to Deep Learning · Fall 2026",
+      featured: true,
+      summary: "A deep learning model that estimates the power a drone needs to fly under changing everyday and windy conditions. We test how a published power model holds up on payloads, speeds and altitudes it hasn't seen, pair it with a physics model, and add calibrated uncertainty estimates.",
+      role: "Course project, team of four.",
+      approach: "Ported the published TCN and LSTM energy models from Keras to PyTorch and reproduced the paper's results, then evaluated them on held-out payload, speed, altitude and route splits.",
+      results: "Ongoing. Wrapping up in November 2026.",
+      tags: ["PyTorch", "Python", "TCN", "LSTM", "Uncertainty estimation"],
+    },
+    {
+      title: "F1TENTH autonomous racing",
+      slug: "f1tenth-racing",
+      meta: "CMU Robot Mobility on Air, Land and Sea · Fall 2026",
+      featured: true,
+      summary: "Course labs on a 1/10 scale autonomous race car, in simulation and on the real car, ending in an autonomous-driving race.",
+      role: "Course labs with my lab team.",
+      tasks: [
+        "Reactive obstacle avoidance with Follow the Gap.",
+        "Waypoint tracking with Pure Pursuit, tested on the car.",
+        "Real-time RRT path planning around obstacles.",
+        "Autonomous-driving race in the NSH Atrium.",
+      ],
+      results: "Ongoing. Raced the car in an autonomous-driving race in the NSH Atrium at Carnegie Mellon in November 2026.",
+      tags: ["ROS 2", "C++", "Python", "LiDAR", "Pure Pursuit", "RRT"],
+    },
+    {
+      title: "Franka arm drawing on an Etch A Sketch",
+      slug: "franka-etch-a-sketch",
+      meta: "CMU Robot Autonomy · Fall 2026",
+      featured: true,
+      summary: "Programming a Franka robot arm to operate an Etch A Sketch. Yes, it is exactly as fun as it sounds.",
+      results: "In progress. Wrapping up in November 2026.",
+      tags: ["Franka arm", "Manipulation"],
+    },
+    {
+      title: "Space robotics side project",
+      slug: "space-robotics",
+      meta: "Side project · Starting soon",
+      featured: false,
+      summary: "A space robotics side project I'm starting soon. More once there's something to show.",
+      results: "Planned.",
+      tags: [] as string[],
     },
   ],
   // Repos to hide from the shelf even if public.
-  hideRepos: [] as string[],
+  hideRepos: ["ysorapalli.com"] as string[],
+  // Repos listed under "Hackathon projects" instead of the main project list, with the event.
+  hackathonRepos: { "stroke-detection": "HackCMU 2026" } as Record<string, string>,
   hideForks: false,
   // Extra line shown under a repo's description.
   repoNotes: {
