@@ -6,6 +6,8 @@ export const site = {
   url: "https://ysorapalli.vercel.app",
   location: "Pittsburgh, PA",
   resume: "/resume",
+  // Public one-page resume. Checked for personal contact details before publishing.
+  resumePdf: "/data/Yashasvi-Sorapalli-Resume.pdf",
   links: {
     linkedin: "https://www.linkedin.com/in/yashasvi-s/",
     github: "https://github.com/ysorapalli",
@@ -49,9 +51,10 @@ export const contentsNote = "Start anywhere, it's not that kind of book. The rou
 
 export const prologue = {
   paragraphs: [
-    "Hi, I'm Yashasvi, a graduate student in Robotic Systems Development at Carnegie Mellon. I'm still exploring different corners of robotics to figure out where I fit. Planning and decision making are what I'm most curious about and hope to work on next; for now I'm learning a bit of everything, perception included.",
-    "Before CMU I spent two years as a software engineer at Visa and BT Group, building dashboards, automating cleanup jobs, and keeping systems running for the people who depended on them.",
-    "Outside the lab I sketch, swim, rollerskate and read, usually with indie music playing, and happiest when it's raining.",
+    "Hi, I'm Yashasvi, a graduate student in Robotic Systems Development at Carnegie Mellon! I'm moving into robotics from a purely computer science background, and I'm most interested in perception, planning, SLAM and deep learning.",
+    "Before making the switch, I spent two years as a software engineer at Visa and BT Group. At Visa, I built real-time Grafana dashboards that brought metrics and logs for VisaPay's core services into one view for on-call debugging, and helped move VisaPay in-house from an outside vendor. At BT, I automated database cleanup with AWS Lambda, cutting stale data by 80%, worked with stakeholders to grow adoption of an unused internal product 7x, and kept an internal analysis tool running through a company-wide restructuring.",
+    "Outside the lab I sketch, swim, rollerskate and read, usually with indie music playing, and I'm happiest when it's raining.",
+    "I'm looking for Summer 2027 robotics software engineering internships!",
   ],
   plate: { src: "/images/YashasviSorapalliPic-optimized.jpg", alt: "Portrait of Yashasvi Sorapalli", caption: "Plate · The author, Pittsburgh" },
 };
@@ -90,14 +93,28 @@ export const papers = [
 export const history = [
   { years: "2020-24", text: "I studied computer science at R.V. College of Engineering in Bangalore, where I also headed the Centre for Interdisciplinary Research in Quantum Information Technology and started doing research." },
   { years: "2024-25", text: "At BT Group, first as an intern and then full time, I automated database cleanup with AWS Lambda and helped bring an unused internal product back into use." },
-  { years: "2025-26", text: "At Visa, I helped onboard a cross-border payments project and built monitoring dashboards in Grafana, so problems were easier to spot and debug." },
+  { years: "2025-26", text: "At Visa, I built real-time Grafana dashboards for VisaPay's core services, so problems were easier to spot and debug, and helped bring VisaPay in-house from an outside vendor." },
   { years: "2026-now", text: "I came to Carnegie Mellon for the M.S. in Robotic Systems Development. Recently, I attended IROS 2026." },
-  { years: "Next", text: "A Summer 2027 software engineering internship in robotics. Still planning the route." },
+  { years: "Next", text: "A Summer 2027 software engineering internship in robotics." },
 ];
 
 export const furtherReading = {
-  coursework: { label: "Coursework, fall 2026", text: "Introduction to Deep Learning. Robot Autonomy. Robot Mobility on Air, Land and Sea." },
-  certificates: { label: "Certificates", text: "Modern Robotics, Courses 1 and 2, Northwestern University (2025). Mathematics for Machine Learning, Imperial College London (2023). Accelerated Computer Science Fundamentals, University of Illinois Urbana-Champaign (2023)." },
+  coursework: {
+    label: "Coursework, fall 2026",
+    items: ["Introduction to Deep Learning", "Robot Autonomy", "Robot Mobility on Air, Land and Sea", "Systems Engineering and Project Management"],
+  },
+  plannedCoursework: {
+    label: "Coursework, spring 2027 (planned)",
+    items: ["Manipulation, Estimation, and Control", "Robot Localization and Mapping", "Introduction to Robotics Business", "MRSD Project I (capstone)"],
+  },
+  certificates: {
+    label: "Certificates",
+    items: [
+      "Modern Robotics, Courses 1 and 2, Northwestern University (2025)",
+      "Mathematics for Machine Learning, Imperial College London (2023)",
+      "Accelerated Computer Science Fundamentals, University of Illinois Urbana-Champaign (2023)",
+    ],
+  },
 };
 
 export const tools = ["C++", "Deep learning", "Java", "LabVIEW", "Linux", "MATLAB", "Python", "PyTorch", "ROS 2", "Spring Boot", "SQL / MySQL"];

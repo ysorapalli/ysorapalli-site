@@ -54,10 +54,6 @@ export default function AboutPage() {
             {prologue.paragraphs.map((p) => (
               <p key={p}>{p}</p>
             ))}
-            <p>
-              I&apos;m looking for Summer 2027 software engineering internships
-              in robotics.
-            </p>
           </section>
         </div>
         <section
@@ -94,10 +90,22 @@ export default function AboutPage() {
           <h2 id="learning-h" className="chapter__title">
             Experience and interests
           </h2>
-          <h3>{furtherReading.coursework.label}</h3>
-          <p>{furtherReading.coursework.text}</p>
-          <h3>{furtherReading.certificates.label}</h3>
-          <p>{furtherReading.certificates.text}</p>
+          {[
+            furtherReading.coursework,
+            furtherReading.plannedCoursework,
+            furtherReading.certificates,
+          ].map(
+            (group) => (
+              <div key={group.label}>
+                <h3>{group.label}</h3>
+                <ul className="learning-list">
+                  {group.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ),
+          )}
           <h3>Index of tools</h3>
           <ul className="tool-grid">
             {tools.map((t) => (

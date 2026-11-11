@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { site } from "@/content/site";
+import { projects } from "@/content/projects";
 import ThemeToggle from "./ThemeToggle";
 import { MenuIcon } from "./icons";
 
@@ -33,16 +34,37 @@ export default function SiteHeader({ current }: { current: Current }) {
         </Link>
         <div className="nav-right">
           <nav className="nav-links" aria-label="Primary">
-            {links.map((l) => (
-              <Link
-                key={l.key}
-                className="nav-link"
-                href={l.href}
-                aria-current={l.key === current ? "page" : undefined}
-              >
-                {l.label}
-              </Link>
-            ))}
+            {links.map((l) => {
+              const link = (
+                <Link
+                  key={l.key}
+                  className="nav-link"
+                  href={l.href}
+                  aria-current={l.key === current ? "page" : undefined}
+                >
+                  {l.label}
+                </Link>
+              );
+              if (l.key !== "projects") return link;
+              // Hover or keyboard focus reveals every project detail page.
+              return (
+                <div key={l.key} className="nav-item">
+                  {link}
+                  <ul className="nav-menu" aria-label="Project pages">
+                    {projects.map((p) => (
+                      <li key={p.slug}>
+                        <Link href={`/projects/${p.slug}`}>{p.title}</Link>
+                      </li>
+                    ))}
+                    <li>
+                      <Link className="nav-menu__all" href="/projects">
+                        All projects →
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              );
+            })}
           </nav>
           <ThemeToggle />
           <button
@@ -59,7 +81,7 @@ export default function SiteHeader({ current }: { current: Current }) {
       </header>
       {open && (
         <nav id="nav-sheet" className="nav-sheet" aria-label="Menu">
-          {links.map((l) => (
+          {links.flatMap((l) => [
             <Link
               key={l.key}
               href={l.href}
@@ -67,8 +89,20 @@ export default function SiteHeader({ current }: { current: Current }) {
               aria-current={l.key === current ? "page" : undefined}
             >
               {l.label}
-            </Link>
-          ))}
+            </Link>,
+            ...(l.key === "projects"
+              ? projects.map((p) => (
+                  <Link
+                    key={p.slug}
+                    className="nav-sheet__sub"
+                    href={`/projects/${p.slug}`}
+                    onClick={close}
+                  >
+                    {p.title}
+                  </Link>
+                ))
+              : []),
+          ])}
         </nav>
       )}
     </div>

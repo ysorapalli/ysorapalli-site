@@ -40,7 +40,8 @@ export default function ProjectCard({
         {p.role && <p className="note">Role: {p.role}</p>}
         {p.skills.length > 0 && (
           <ul className="tags" aria-label="Skills">
-            {p.skills.map((skill) => (
+            {/* First five keep the card to one row of tags; the detail page lists them all. */}
+            {p.skills.slice(0, 5).map((skill) => (
               <li key={skill}>{skill}</li>
             ))}
           </ul>

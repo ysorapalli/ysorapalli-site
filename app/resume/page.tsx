@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { site } from "@/content/site";
 import SiteHeader from "@/components/SiteHeader";
 import PageCard, { RunningHead } from "@/components/PageCard";
 import SiteFooter from "@/components/SiteFooter";
 
-export const metadata: Metadata = { title: "Resume" };
-// TODO: add a sanitized public resume only after text and visual privacy review.
+export const metadata: Metadata = {
+  title: "Resume",
+  description: `${site.name}'s one-page resume.`,
+};
+
 export default function ResumePage() {
   return (
     <>
@@ -18,13 +21,32 @@ export default function ResumePage() {
               Resume
             </h1>
             <p className="page-intro">
-              A public resume will be available here soon.
+              Everything on one page: education, projects and experience.
             </p>
-            <Link className="text-link" href="/contact">
-              Get in touch →
-            </Link>
+            <div className="resume-actions">
+              <a
+                className="btn btn--ink"
+                href={site.resumePdf}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open PDF ↗
+              </a>
+              <a
+                className="btn btn--outline"
+                href={site.resumePdf}
+                download="Yashasvi-Sorapalli-Resume.pdf"
+              >
+                Download
+              </a>
+            </div>
           </div>
         </section>
+        <iframe
+          className="resume-frame"
+          src={site.resumePdf}
+          title={`${site.name}'s resume`}
+        />
         <SiteFooter />
       </PageCard>
     </>
