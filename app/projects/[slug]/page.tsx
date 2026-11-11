@@ -19,23 +19,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 function Detail({
   title,
-  text,
-  items,
+  content,
 }: {
   title: string;
-  text?: string;
-  items?: string[];
+  content?: string | string[];
 }) {
   // Sections without confirmed content stay hidden until the author fills them in.
-  if (!text && !items?.length) return null;
+  if (!content?.length) return null;
   return (
     <section className="detail-section">
       <h2>{title}</h2>
-      {text ? (
-        <p>{text}</p>
+      {typeof content === "string" ? (
+        <p>{content}</p>
       ) : (
         <ul>
-          {items!.map((item) => (
+          {content.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
@@ -78,20 +76,22 @@ export default async function ProjectDetail({ params }: Props) {
                     sizes="(max-width: 700px) 85vw, 620px"
                   />
                 </div>
+                {p.image.caption && (
+                  <figcaption className="figcap">{p.image.caption}</figcaption>
+                )}
               </figure>
             )}
-            <Detail title="Goal" text={p.description ?? p.summary} />
-            <Detail title="Major tasks" items={p.tasks} />
-            <Detail title="Technical approach" text={p.approach} />
+            <Detail title="Goal" content={p.description ?? p.summary} />
+            <Detail title="Major tasks" content={p.tasks} />
+            <Detail title="Technical approach" content={p.approach} />
             <Detail
               title="My contributions"
-              text={p.contributions?.length ? undefined : p.role}
-              items={p.contributions}
+              content={p.contributions?.length ? p.contributions : p.role}
             />
-            <Detail title="Challenges" text={p.challenges} />
-            <Detail title="How they were addressed" text={p.resolution} />
-            <Detail title="Results or current status" text={p.results} />
-            <Detail title="Key takeaways" text={p.lessons} />
+            <Detail title="Challenges" content={p.challenges} />
+            <Detail title="How they were addressed" content={p.resolution} />
+            <Detail title="Results or current status" content={p.results} />
+            <Detail title="Key takeaways" content={p.lessons} />
           </div>
           <aside className="project-resources" aria-labelledby="resources-h">
             <h2 id="resources-h">Project notes</h2>
@@ -114,7 +114,7 @@ export default async function ProjectDetail({ params }: Props) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Paper ↗
+                {p.paperLabel ?? "Paper"} ↗
               </a>
             )}
             {p.repository && (
