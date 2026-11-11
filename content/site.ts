@@ -140,8 +140,8 @@ export const projectsPage = {
     {
       title: "DARWIN: Autonomous Robotic System for Wet Lab Experiments",
       meta: "CMU MRSD capstone · 2026-2028", ongoing: true,
-      image: "/images/projects/autonomous-laboratory.jpg", imagePosition: "50% 20%",
-      alt: "System diagram of the autonomous lab robot workflow",
+      image: "/images/projects/darwin.jpg", imagePosition: "50% 50%",
+      alt: "Line drawing of a robot arm on a mobile base reaching over a well plate, from the DARWIN title slide",
       summary: "DARWIN is my capstone team's robot arm on a mobile base that runs wet-lab experiments end to end, notices when something goes wrong, and recovers. Our first target is a full yeast growth experiment.",
       tags: ["ROS 2", "Manipulation", "Task planning", "Behavior trees", "SLAM", "Perception", "Anomaly detection", "Failure recovery", "Systems engineering"],
     },
@@ -215,6 +215,14 @@ export const projectsPage = {
       meta: "CMU 16-665 Robot Mobility on Air, Land and Sea · Fall 2026",
       featured: true,
       summary: "The autonomous driving part of CMU's Robot Mobility course, where teams program a 1/10 scale F1TENTH race car to drive itself, first in simulation and then on the real car.",
+      image: {
+        src: "/images/projects/f1tenth-car.jpg",
+        width: 1400,
+        height: 1392,
+        alt: "The team's 1/10 scale F1TENTH car on a lab bench, with its compute board, motor controller and LiDAR mounted on the chassis",
+        position: "50% 55%",
+        caption: "Our team's F1TENTH car in the lab.",
+      },
       description: "Learn and implement core autonomous driving algorithms in simulation and on a real mini F1 car, and have the team car complete laps around a track while avoiding obstacles and other cars.",
       role: "Course team project.",
       tasks: [
@@ -311,7 +319,7 @@ export const projectsPage = {
 
 export const images = {
   portrait: { src: "/images/YashasviSorapalliPic-optimized.jpg", width: 1774, height: 1774 },
-  lab: { src: "/images/projects/autonomous-laboratory.jpg", width: 1298, height: 745 },
+  lab: { src: "/images/projects/darwin.jpg", width: 1400, height: 875 },
   tracking: { src: "/images/projects/multicamera-tracking.jpg", width: 1302, height: 893 },
   blockchain: { src: "/images/projects/blockchain-document-storage.jpg", width: 969, height: 836 },
 } as const;
