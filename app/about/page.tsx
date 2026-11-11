@@ -4,7 +4,6 @@ import {
   site,
   prologue,
   images,
-  history,
   furtherReading,
   tools,
 } from "@/content/site";
@@ -56,32 +55,6 @@ export default function AboutPage() {
             ))}
           </section>
         </div>
-        <section
-          id="background"
-          className="about-section prose"
-          aria-labelledby="background-h"
-        >
-          <RunningHead left="Earlier chapters" right="Background" />
-          <h2 id="background-h" className="chapter__title">
-            Before all this
-          </h2>
-          <ol className="timeline">
-            {history.map((h, i) => (
-              <li
-                key={h.years}
-                data-seg={i === history.length - 1 ? "none" : "solid"}
-              >
-                <span
-                  className="timeline__node"
-                  aria-hidden="true"
-                  data-fill={i === history.length - 2}
-                />
-                <span className="timeline__years">{h.years}</span>
-                <p>{h.text}</p>
-              </li>
-            ))}
-          </ol>
-        </section>
         <section
           id="learning"
           className="about-section prose"

@@ -51,7 +51,7 @@ export const contentsNote = "Start anywhere, it's not that kind of book. The rou
 
 export const prologue = {
   paragraphs: [
-    "Hi, I'm Yashasvi, a graduate student in Robotic Systems Development at Carnegie Mellon! I'm moving into robotics from a purely computer science background, and I'm most interested in perception, planning, SLAM and deep learning.",
+    "Hi, I'm Yashasvi, a graduate student in Robotic Systems Development at Carnegie Mellon! I'm moving into robotics from a purely computer science background, and I'm most interested in perception, planning, SLAM and deep learning. I studied computer science at R.V. College of Engineering in Bangalore, where I headed the Centre for Interdisciplinary Research in Quantum Information Technology and got my start in research. This fall, I also attended IROS 2026.",
     "Before making the switch, I spent two years as a software engineer at Visa and BT Group. At Visa, I built real-time Grafana dashboards that brought metrics and logs for VisaPay's core services into one view for on-call debugging, and helped move VisaPay in-house from an outside vendor. At BT, I automated database cleanup with AWS Lambda, cutting stale data by 80%, worked with stakeholders to grow adoption of an unused internal product 7x, and kept an internal analysis tool running through a company-wide restructuring.",
     "Outside the lab I sketch, swim, rollerskate and read, usually with indie music playing, and I'm happiest when it's raining.",
     "I'm looking for Summer 2027 robotics software engineering internships!",
@@ -87,15 +87,6 @@ export const papers = [
     href: "https://doi.org/10.1109/CSITSS64042.2024.10816830",
     doi: "10.1109/CSITSS64042.2024.10816830",
   },
-];
-
-// Timeline. The second-to-last node is "you are here" (filled); the last is dashed (future).
-export const history = [
-  { years: "2020-24", text: "I studied computer science at R.V. College of Engineering in Bangalore, where I also headed the Centre for Interdisciplinary Research in Quantum Information Technology and started doing research." },
-  { years: "2024-25", text: "At BT Group, first as an intern and then full time, I automated database cleanup with AWS Lambda and helped bring an unused internal product back into use." },
-  { years: "2025-26", text: "At Visa, I built real-time Grafana dashboards for VisaPay's core services, so problems were easier to spot and debug, and helped bring VisaPay in-house from an outside vendor." },
-  { years: "2026-now", text: "I came to Carnegie Mellon for the M.S. in Robotic Systems Development. Recently, I attended IROS 2026." },
-  { years: "Next", text: "A Summer 2027 software engineering internship in robotics." },
 ];
 
 export const furtherReading = {
